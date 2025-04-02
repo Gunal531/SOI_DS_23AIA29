@@ -1,0 +1,10 @@
+function unique(arr) {
+    let uniqueValues = arr.filter((num, _, a) => a.indexOf(num) === a.lastIndexOf(num));
+    let repeatedValues = [...new Set(arr.filter((num, _, a) => a.indexOf(num) !== a.lastIndexOf(num)))];
+    return { uniqueValues, repeatedValues };
+}
+
+let numbers = [10, 10, 20, 30];
+let result = unique(numbers);
+console.log("Unique Values:", result.uniqueValues);
+console.log("Repeated Values:", result.repeatedValues);
